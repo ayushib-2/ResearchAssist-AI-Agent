@@ -3,6 +3,7 @@
 **ResearchAssist-AI-Agent** is an AI-powered research assistant that takes a natural language query and autonomously gathers information using web search and Wikipedia, summarizes the findings, and saves a neatly formatted report to a text file.
 
 Built using:
+
 - **LangChain Agents**
 - **OpenAI (GPT-4o-mini)**
 - **Anthropic Claude (optional)**
@@ -21,45 +22,71 @@ Built using:
 
 ---
 
-## 📂 Project Structure
-
-ResearchAssist-AI-Agent/
-│
-├── main.py # Entry point – runs the agent
-├── tools.py # Custom tools (search, wiki, save-to-file)
-├── requirements.txt # All required Python dependencies
-├── .gitignore # Ignored files (e.g. .venv, .env, output files)
-├── research_output.txt # Auto-generated file with saved summaries
-
-
----
-
 ## 🚀 Setup & Installation
 
 ### 1. Clone the Repo
 
+```bash
 git clone https://github.com/yourusername/ResearchAssist-AI-Agent.git
 cd ResearchAssist-AI-Agent
+```
 
+### 2. Create a Virtual Environment
 
-
-### 2. Create a virtual environment
+```bash
 python3 -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
-
+```
 
 ### 3. Install Dependencies
-pip install -r requirements.txt
 
+```bash
+pip install -r requirements.txt
+```
 
 ### 4. Set Up API Keys
+
+Create a `.env` file in the root of the project and add your keys:
+
+```env
 OPENAI_API_KEY=your-openai-key
-ANTHROPIC_API_KEY=your-anthropic-key   # optional
+ANTHROPIC_API_KEY=your-anthropic-key  # optional
+```
 
+---
 
-## How to run the agent
+## ▶️ How to Run the Agent
+
+```bash
 python main.py
+```
 
 Then enter a natural language query like:
+
+```text
 What can I help you search?
 > History of quantum computing
+```
+
+---
+
+## 🌟 Example Output
+
+```
+--- Research Output ---
+Timestamp: 2025-07-03 11:55:14
+
+Topic: Artificial Intelligence
+
+Summary:
+Artificial intelligence (AI) is the capability of computational systems to perform tasks associated with human intelligence...
+
+Sources:
+- Wikipedia - Artificial Intelligence
+- Recent advancements in Artificial Intelligence
+
+Tools Used: wikipedia, search
+--- End of Research Output ---
+```
+
+---
